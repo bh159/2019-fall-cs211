@@ -1,7 +1,13 @@
 #define PDC_DLL_BUILD 1
 
+
+
 #include "curses.h"
+//#include "panel.h"
+//#include "curspriv.h"
+
 #include <string>
+
 using namespace std;
 
 unsigned char border_char = 219;
@@ -22,6 +28,7 @@ int main(void) {
 
 	//turn off key echo
 	noecho();
+
 	//nodelay(main_window, TRUE);
 	keypad(main_window, TRUE);
 	curs_set(0);
@@ -30,19 +37,39 @@ int main(void) {
 	for (int i = 0; i < num_cols; i++) {
 
 		//top border
-		mvaddch(0, i, ACS_CKBOARD);
+		mvaddch(0, i, ACS_RARROW);
 
 		//bottom border
-		mvaddch(num_rows-1, i, ACS_CKBOARD);
+		mvaddch(num_rows-1, i, ACS_LARROW);
 
 	}
 	for (int i = 0; i < num_rows; i++) {
 		//left column
-		mvaddch(i, 0, ACS_CKBOARD);
+
+
+		//adds corner bullet (NOT WORKING CURRENTLY)
+		if (i == 0 || i == num_rows-1) {
+			mvaddch(i, 0, ACS_BULLET);
+
+		}
+		mvaddch(i, 0, ACS_UARROW);
 
 		//right column
-		mvaddch(i, num_cols-1, ACS_CKBOARD);
+
+		//adds corner bullet
+		if (i == 0 || i == num_rows-1) {
+			mvaddch(i, num_cols - 1, ACS_BULLET);
+
+		}
+		else {
+			mvaddch(i, num_cols - 1, ACS_DARROW);
+		}
+		
+		
 	}
+	
+
+
 
 
 	//tells curses to draw
