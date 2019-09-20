@@ -129,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="pdcurses.dll" />
+    <None Include="pdcurses.exp" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="pdcurses.lib" />

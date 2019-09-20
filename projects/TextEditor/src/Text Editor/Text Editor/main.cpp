@@ -3,8 +3,8 @@
 
 
 #include "curses.h"
-//#include "panel.h"
-//#include "curspriv.h"
+#include "panel.h"
+#include "curspriv.h"
 
 #include <string>
 #include <iostream>

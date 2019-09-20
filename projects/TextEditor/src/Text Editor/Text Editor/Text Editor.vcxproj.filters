@@ -29,6 +29,9 @@
     <None Include="pdcurses.dll">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="pdcurses.exp">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Library Include="pdcurses.lib">
