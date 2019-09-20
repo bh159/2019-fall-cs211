@@ -8,6 +8,9 @@
 
 #include <string>
 #include <iostream>
+#include <fstream>
+#include <iomanip>
+
 
 
 using namespace std;
@@ -36,6 +39,8 @@ int main(void) {
 	curs_set(0);
 
 	//FUN STUFF HAPPENS HERE
+
+	/*
 	for (int i = 0; i < num_cols; i++) {
 
 		//top border
@@ -63,12 +68,28 @@ int main(void) {
 			mvaddch(i, num_cols - 1, ACS_BULLET);
 
 		}
-		else {
+		else {  
 			mvaddch(i, num_cols - 1, ACS_DARROW);
 		}
 		
 		
+	}*/
+	//opens file
+	string line;
+	ifstream myfile("test.txt");
+	if (myfile.is_open())
+	{
+		while (getline(myfile, line))
+		{
+			cout << mvaddch(0, 0, 124) << '\n';
+			
+		}
+		myfile.close();
 	}
+
+	else cout << mvaddch(0, 0, 23);
+
+	
 	
 
 
