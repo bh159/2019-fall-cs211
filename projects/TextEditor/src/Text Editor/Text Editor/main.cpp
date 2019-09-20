@@ -7,6 +7,8 @@
 //#include "curspriv.h"
 
 #include <string>
+#include <iostream>
+
 
 using namespace std;
 
@@ -37,7 +39,7 @@ int main(void) {
 	for (int i = 0; i < num_cols; i++) {
 
 		//top border
-		mvaddch(0, i, ACS_RARROW);
+		mvaddch(0, i, 218);
 
 		//bottom border
 		mvaddch(num_rows-1, i, ACS_LARROW);
